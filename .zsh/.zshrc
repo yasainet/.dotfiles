@@ -12,9 +12,13 @@ setopt share_history       # 複数のシェル間で履歴を共有
 setopt extended_history    # タイムスタンプ付きで記録
 setopt hist_reduce_blanks  # 余分な空白を削除
 
+# dircolors
+test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
+alias ls='gls --color=auto'
+
+
 # エイリアス設定
-alias ll='ls -l'           # `ll` で `ls -l` を実行
-alias la='ls -la'          # `la` で `ls -la` を実行
+alias ll='ls -la'           # `ll` で `ls -l` を実行
 alias grep='grep --color=auto' # `grep` の出力をカラー表示
 
 # その他
@@ -24,17 +28,20 @@ setopt correct             # スペルミス自動修正
 setopt extended_glob       # 拡張グロブ有効化
 unsetopt case_glob         # 大文字小文字区別しない
 
+# Git
+alias g='git'
+alias ga='git add'
+alias gst='git status'
+alias gco='git checkout'
+alias gcm='git commit -m'
+alias gpl='git pull'
+alias gps='git push'
 
 # cd した後に ls -la を実行する
 chpwd() {
 	if [[ $(pwd) != $HOME ]]; then;
 		ls -la
 	fi
-}
-
-# ファイルサイズを人間が読みやすい形式で表示
-human_readable_size() {
-  numfmt --to=iec-i --suffix=B "$1"
 }
 
 # クリップボードにコピー
@@ -46,9 +53,6 @@ clipcopy() {
   fi
 }
 
-# dircolors
-test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
-alias ls='gls --color=auto'
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -97,3 +101,16 @@ zinit light-mode for \
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yasainet/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yasainet/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yasainet/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yasainet/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+# export PATH="/usr/local/bin:$PATH"
+
+# Google Cloud SDK, Node.js のバージョンを M1 Mac に合わせる
+export PATH="/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
