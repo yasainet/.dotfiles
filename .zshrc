@@ -37,6 +37,9 @@ alias gcm='git commit -m'
 alias gpl='git pull'
 alias gps='git push'
 
+# Editor
+alias code='zed' # code で zed 開く
+
 # cd した後に ls -la を実行する
 chpwd() {
 	if [[ $(pwd) != $HOME ]]; then;
@@ -50,6 +53,34 @@ clipcopy() {
     pbcopy < /dev/stdin
   else
     command pbcopy < "$1"
+  fi
+}
+
+# Alias for cat command to copy output to clipboard
+alias cat='cat_with_clipboard'
+
+cat_with_clipboard() {
+  if [ $# -eq 0 ]; then
+    /bin/cat
+  else
+    /bin/cat "$@"
+
+    # Copy the content to the clipboard
+    if command -v pbcopy &> /dev/null; then
+      # macOS
+      /bin/cat "$@" | pbcopy
+      echo "Content copied to clipboard."
+    elif command -v xclip &> /dev/null; then
+      # Linux with xclip
+      /bin/cat "$@" | xclip -selection clipboard
+      echo "Content copied to clipboard."
+    elif command -v xsel &> /dev/null; then
+      # Linux with xsel
+      /bin/cat "$@" | xsel --clipboard --input
+      echo "Content copied to clipboard."
+    else
+      echo "No clipboard utility found. Please install pbcopy, xclip, or xsel."
+    fi
   fi
 }
 
@@ -99,9 +130,8 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/.zsh/.p10k.zsh. 
-[[ ! -f ~/.dotfiles/.zsh/.p10k.zsh ]] || source ~/.dotfiles/.zsh/.p10k.zsh 
-
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/.zsh/.p10k.zsh.
+[[ ! -f ~/.dotfiles/.zsh/.p10k.zsh ]] || source ~/.dotfiles/.zsh/.p10k.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/yasainet/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yasainet/google-cloud-sdk/path.zsh.inc'; fi
@@ -110,7 +140,30 @@ if [ -f '/Users/yasainet/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yasain
 if [ -f '/Users/yasainet/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yasainet/google-cloud-sdk/completion.zsh.inc'; fi
 
 
-# export PATH="/usr/local/bin:$PATH"
+# export PATH
+# export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize
 
 # Google Cloud SDK, Node.js のバージョンを M1 Mac に合わせる
-export PATH="/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+# export PATH="/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+
+export PATH="$HOME/.cargo/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/yasainet/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/yasainet/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/yasainet/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/yasainet/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
