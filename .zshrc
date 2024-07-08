@@ -101,7 +101,7 @@ zinit ice depth=1
 zinit snippet OMZ::lib/completion.zsh
 
 # Zinit Plugins
-zinit load zsh-users/zsh-autosuggestions
+# zinit load zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load zsh-users/zsh-completions
 zinit load romkatv/powerlevel10k
@@ -141,13 +141,8 @@ if [ -f '/Users/yasainet/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/
 
 
 # export PATH
-# export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize
-
 # Google Cloud SDK, Node.js のバージョンを M1 Mac に合わせる
-# export PATH="/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
-
 export PATH="$HOME/.cargo/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
