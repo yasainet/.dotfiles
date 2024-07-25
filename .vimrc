@@ -1,8 +1,6 @@
 " 英語化
 set langmenu=en_US
 let $LANG = 'en_US'
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
 
 " 基本設定
 set number

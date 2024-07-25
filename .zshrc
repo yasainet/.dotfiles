@@ -133,33 +133,9 @@ zinit light-mode for \
 # Powerlevel10k configuration
 [[ ! -f ~/.dotfiles/.zsh/.p10k.zsh ]] || source ~/.dotfiles/.zsh/.p10k.zsh
 
-# Google Cloud SDK path
-if [ -f '/Users/yasainet/google-cloud-sdk/path.zsh.inc' ]; then
-  . '/Users/yasainet/google-cloud-sdk/path.zsh.inc'
-fi
+# Brew設定
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Google Cloud SDK completion
-if [ -f '/Users/yasainet/google-cloud-sdk/completion.zsh.inc' ]; then
-  . '/Users/yasainet/google-cloud-sdk/completion.zsh.inc'
-fi
-
-# PATH設定
-export PATH="$HOME/.cargo/bin:$HOME/google-cloud-sdk/bin:$HOME/miniconda3/bin:$HOME/miniconda3/condabin:$HOME/.local/share/zinit/polaris/bin:/usr/local/Cellar/node/22.2.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
-
-# NVM設定
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# conda設定
-__conda_setup="$('/Users/yasainet/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-  eval "$__conda_setup"
-else
-  if [ -f "/Users/yasainet/miniconda3/etc/profile.d/conda.sh" ]; then
-    . "/Users/yasainet/miniconda3/etc/profile.d/conda.sh"
-  else
-    export PATH="/Users/yasainet/miniconda3/bin:$PATH"
-  fi
-fi
-unset __conda_setup
