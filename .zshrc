@@ -103,6 +103,7 @@ zinit snippet OMZ::lib/completion.zsh
 
 # Zinit Plugins
 zinit load zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
 zinit load zsh-users/zsh-completions
 zinit load romkatv/powerlevel10k
 zinit load zsh-users/zsh-history-substring-search
