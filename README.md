@@ -13,7 +13,6 @@ test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
 - `brew install --cask google-drive`
 
 ## ~/Downloads
-
 - `sudo rm -rf Downloads`
 - `ln -s ~/Google\ Drive/My\ Drive/Downloads ~/`
 
