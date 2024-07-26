@@ -17,8 +17,8 @@
 - `brew install --cask git-credential-manager-core`
 - `git config --global credential.helper manager-core`
 
-## Terminal.app
-- font: MesloLGS NF Regular 14
+確認（option）:
+- `git config --global -l`
 
 ## .dotfiles
 - `git clone https://github.com/yasainet/.dotfiles.git`
@@ -27,6 +27,9 @@
 - `ln -s ~/.dotfiles/.vimrc ~/`
 - `ln -s ~/.dotfiles/.vim ~/`
 - `ln -s ~/.dotfiles/.zshrc ~/`
+
+## Terminal.app
+- font: MesloLGS NF Regular 14
 
 ### vim-plug
 1. ダウンロード
@@ -59,15 +62,29 @@ test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
 
 - `nvm install --lts` (option)
 
+# Application
+## Google Chrome
+- `brew install google-chrome`
+
+## Google 日本語
+- `brew install google-japanese-ime`
+
 ## Google Drive
 - `brew install --cask google-drive`
-
-## ~/Downloads
-- `sudo rm -rf Downloads`
-- `ln -s ~/Google\ Drive/My\ Drive/Downloads ~/`
 
 ## appcleaner
 - `brew install --cask appcleaner`
 
 ## zed
 - `brew install --cask zed`
+
+## slack
+- `brew install --cask slack`
+
+## Discord
+- `brew install --cask discord`
+
+# その他
+## ~/Downloads
+- `sudo rm -rf Downloads`
+- `ln -s ~/Google\ Drive/My\ Drive/Downloads ~/`
