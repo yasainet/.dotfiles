@@ -1,3 +1,4 @@
+# Setup
 ## Homebres
 - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 - `brew --version`
@@ -39,7 +40,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ### p10k
 - `p10k configure`
 
-## .dir_colors
+## dircolors
 - `cd .dotfiles`
 - `git clone https://github.com/nordtheme/dircolors`
 - `ln -sr "$PWD/.dotfiles/src/dir_colors" ~/.dir_colors`
@@ -65,3 +66,8 @@ test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
 - `sudo rm -rf Downloads`
 - `ln -s ~/Google\ Drive/My\ Drive/Downloads ~/`
 
+## appcleaner
+- `brew install --cask appcleaner`
+
+## zed
+- `brew install --cask zed`

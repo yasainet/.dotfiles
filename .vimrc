@@ -54,7 +54,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
 " インデント可視化
 Plug 'Yggdroot/indentLine'
 
@@ -68,7 +67,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
-
 
 " Nord
 colorscheme nord
