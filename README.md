@@ -62,6 +62,40 @@ test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
 
 - `nvm install --lts` (option)
 
+# Tools
+## code2prompt
+Rust:
+- `brew install rustup-init`
+- `rustup-init`
+- 再起動: `exec $SHELL -l`
+Install:
+- `cargo install code2prompt`
+
+## OpenCommit
+- `npm install -g opencommit`
+- `oco config set OCO_OPENAI_API_KEY=<your_api_key>`
+- `vim ~/.opencommit`
+```
+OCO_OPENAI_API_KEY=sk-<your_api_key>
+OCO_ANTHROPIC_API_KEY=undefined
+OCO_AZURE_API_KEY=undefined
+OCO_GEMINI_API_KEY=undefined
+OCO_TOKENS_MAX_INPUT=undefined
+OCO_TOKENS_MAX_OUTPUT=undefined
+OCO_OPENAI_BASE_PATH=undefined
+OCO_GEMINI_BASE_PATH=undefined
+OCO_DESCRIPTION=false
+OCO_EMOJI=true
+OCO_MODEL=gpt-4o-mini
+OCO_LANGUAGE=ja
+OCO_MESSAGE_TEMPLATE_PLACEHOLDER=$msg
+OCO_PROMPT_MODULE=conventional-commit
+OCO_AI_PROVIDER=openai
+OCO_GITPUSH=true
+OCO_ONE_LINE_COMMIT=false
+OCO_TEST_MOCK_TYPE=commit-message
+```
+
 # Application
 ## Google Chrome
 - `brew install google-chrome`
