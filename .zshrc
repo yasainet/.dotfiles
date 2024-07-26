@@ -6,27 +6,27 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
 # ヒストリ設定
-HISTSIZE=10000             # 履歴を10,000行まで保存
-SAVEHIST=10000             # 履歴を10,000行まで保存
-setopt hist_ignore_dups    # 重複するコマンドを履歴に記録しない
-setopt share_history       # 複数のシェル間で履歴を共有
-setopt extended_history    # タイムスタンプ付きで記録
-setopt hist_reduce_blanks  # 余分な空白を削除
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt share_history
+setopt extended_history
+setopt hist_reduce_blanks
+
+# その他設定
+zstyle ':completion:*' menu select
+setopt auto_cd
+setopt correct
+setopt extended_glob
+unsetopt case_glob
 
 # dircolors
 test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
-alias ls='gls --color=auto'
 
 # エイリアス設定
-alias ll='ls -la'           # `ll` で `ls -l` を実行
-alias grep='grep --color=auto' # `grep` の出力をカラー表示
-
-# その他設定
-zstyle ':completion:*' menu select  # 補完候補をメニュー形式で表示
-setopt auto_cd             # ディレクトリ名だけで移動
-setopt correct             # スペルミス自動修正
-setopt extended_glob       # 拡張グロブ有効化
-unsetopt case_glob         # 大文字小文字区別しない
+alias ll='ls -la'
+alias grep='grep --color=auto'
+alias ls='gls --color=auto'
 
 # Git エイリアス
 alias g='git'
