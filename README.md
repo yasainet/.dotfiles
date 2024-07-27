@@ -63,6 +63,14 @@ test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
 - `nvm install --lts` (option)
 
 # Tools
+## Google Cloud SDK
+- `brew install --cask google-cloud-sdk`
+- `vim ~/.zshrc`
+```
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+```
+
 ## code2prompt
 Rust:
 - `brew install rustup-init`
@@ -117,6 +125,12 @@ OCO_TEST_MOCK_TYPE=commit-message
 
 ## Discord
 - `brew install --cask discord`
+
+## TG Pro
+- `brew install --cask tg-pro`
+
+## UTM
+- `brew install --cask utm`
 
 # その他
 ## ~/Downloads
