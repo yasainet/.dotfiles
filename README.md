@@ -71,11 +71,21 @@ source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 ```
 
+## Miniconda
+- `brew install --cask miniconda`
+
+## clasp
+- `npm i @google/clasp -g`
+
+## ffmpeg
+- `brew install ffmpeg`
+
 ## code2prompt
 Rust:
 - `brew install rustup-init`
 - `rustup-init`
-- 再起動: `exec $SHELL -l`
+再起動:
+- `exec $SHELL -l`
 Install:
 - `cargo install code2prompt`
 
@@ -131,6 +141,9 @@ OCO_TEST_MOCK_TYPE=commit-message
 
 ## UTM
 - `brew install --cask utm`
+
+## Tor
+- `brew install --cask tor-browser`
 
 # その他
 ## ~/Downloads
