@@ -71,6 +71,10 @@ source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 ```
 
+## Github CLI
+- `brew install gh`
+- `gh auth login`
+
 ## Miniconda
 - `brew install --cask miniconda`
 
@@ -144,6 +148,9 @@ OCO_TEST_MOCK_TYPE=commit-message
 
 ## Tor
 - `brew install --cask tor-browser`
+
+## Bisq
+- `brew install --cask bisq`
 
 # その他
 ## ~/Downloads
