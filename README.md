@@ -5,8 +5,8 @@
 
 ## Git
 - `brew install git`
-- `git config --global name "yasainet"`
-- `git config --global email "takumi.mizoguchi@gmail.com"`
+- `git config --global user.name "yasainet"`
+- `git config --global user.email "takumi.mizoguchi@gmail.com"`
 
 ### 便利設定
 - `git config --global push.default current`
@@ -84,6 +84,9 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 ## ffmpeg
 - `brew install ffmpeg`
 
+## tree
+- `brew install tree`
+
 ## code2prompt
 Rust:
 - `brew install rustup-init`
@@ -119,8 +122,11 @@ OCO_TEST_MOCK_TYPE=commit-message
 ```
 
 # Application
+## Githu Desktop
+- `brew install --cask github`
+
 ## Google Chrome
-- `brew install google-chrome`
+- `brew install --cask google-chrome`
 
 ## Google 日本語
 - `brew install google-japanese-ime`
@@ -128,8 +134,14 @@ OCO_TEST_MOCK_TYPE=commit-message
 ## Google Drive
 - `brew install --cask google-drive`
 
+## Rectangle
+- `brew install --cask rectangle`
+
 ## appcleaner
 - `brew install --cask appcleaner`
+
+## cleanshot
+- `brew install --cask cleanshot`
 
 ## zed
 - `brew install --cask zed`

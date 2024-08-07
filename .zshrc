@@ -24,6 +24,7 @@ unsetopt case_glob
 test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
 
 # エイリアス設定
+alias python='python3'
 alias ll='ls -la'
 alias grep='grep --color=auto'
 alias ls='gls --color=auto'
