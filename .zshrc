@@ -25,6 +25,7 @@ test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
 
 # エイリアス設定
 alias python='python3'
+alias top='glances' # たぶん、 top 使わないからおk
 alias ll='ls -la'
 alias grep='grep --color=auto'
 alias ls='gls --color=auto'

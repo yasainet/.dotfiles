@@ -87,6 +87,9 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 ## tree
 - `brew install tree`
 
+## Glances
+- `brew install glances`
+
 ## code2prompt
 Rust:
 - `brew install rustup-init`
